@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1.npx create-next-app@latest [javascript-yes,eslint-no,tailwindcss-yes,import alias-no]
 
-## Getting Started
+2.npx shadcn@latest init
+3.npx shadcn@latest add button
 
-First, run the development server:
+4.npm i drizzle-orm @neondatabase/serverless
+5.npm i -D drizzle-kit
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+6.Neon(fitnessfreak2005@gmail.com noori account)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7.clerk(ashmes16@gmail.com)
+8.npm install @clerk/nextjs
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+9.npm i lucide-react
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+10.npm install @google/generative-ai(using fitnessfreak200@gmail.com noori account)
 
-## Learn More
+11.npm i puppeteer(for web scraping)
+12.npm i jsdom(getting data in dom)
 
-To learn more about Next.js, take a look at the following resources:
+13.Hugging face account using ashmes16@gmail.com(i have made a write api and using this model:https://api-inference.huggingface.co/models/facebook/mms-tts-eng)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+14.npm i axios
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+15.npx shadcn@latest add alert-dialog
+16.npm i uuid (for generating unique id)
 
-## Deploy on Vercel
+17.Firebase account using ashmes16@gmail.com
+18. npm install firebase
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+19. assemblyai using ashmes16@gmail.com
+20. npm install assemblyai (for captions)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+21.using remotion for video processing
+22.npm i --save-exact remotion@4.0.220 @remotion/cli@4.0.220
+
+23.npx shadcn@latest add dialog
+
