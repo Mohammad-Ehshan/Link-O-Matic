@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+section.main{
+  font-family: "Montserrat", sans-serif;
+  /* height: 100vh; */
+  /* width: 100vw; */
+}
+section .navbar{
+  height: 9vh;
+  /* border: 0.05rem solid white; */
+  /* width: 100vw; */
+  z-index: 2;
+}
+.navbar .logo{
+  height: 7rem;
+  width: 9rem;
+}
+.navbar img{
+  height: 7rem;
+  width: 9rem;
+}
+.navbar ul{
+  font-size: 1.3rem;
+  height: 4rem;
+  width: 73rem;
+  /* border: 0.05rem solid white; */
+  gap: 3rem;
+}
+.navbar button{
+  font-size: 1.15rem;
+  border-radius: 2rem;
+  font-weight: 550;
+  height: 3rem;
+  width: 7rem;
+}
+main .content1{
+  /* border: 0.05rem solid white; */
+  height: 45vh;
+  width: 100vw;
+}
+.content1 button{
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0.05rem solid white;
+  border-radius: 1rem;
+  /* background: linear-gradient(to right, #037ADE,#03E5B7); */
+  height: 5.5vh;
+  width: 15rem;
+  z-index: 2;
+}
+.content1 h1{
+  font-size: 7rem;
+  font-weight: 500;
+  opacity: 9;
+  z-index: 2;
+}
+main .content2{
+  height: 16vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+}
+.content2 .b1{
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  height: 6vh;
+  width: 8.2rem;
+  background: linear-gradient(to right, #037ADE,#03E5B7);
+  z-index: 2;
+}
+.content2 .b2{
+  font-size: 1.1rem;
+  font-weight: 450;
+
+  z-index: 2;
+}
+main .content3{
+  height: 30vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+}
+.content3 .box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  /* border: 0.05rem solid white; */
+  height: 25vh;
+  width: 27vw;
+}
+.content3 .box i{
+  font-size: 3rem;
+  color: #02c8a1;
+}
+.content3 .box h1{
+  font-size: 1.5rem;
+  font-weight: 500;
+}

@@ -8,6 +8,8 @@ import { VideoData } from '@/configs/schema';
 import { eq } from 'drizzle-orm';
 import { useUser } from '@clerk/nextjs';
 import VideoList from './_components/VideoList';
+import Prepers from '../Home/_components/Prepers';
+import Testimonal2 from '../Home/_components/Testimonial2';
 
 const page = () => {
   const [videoList, setVideoList] = useState([]);
@@ -26,7 +28,7 @@ const page = () => {
   }
 
   return (
-    <div>
+    <div >
       <div className='flex justify-between items-center'>
         <h2 className='font-bold text-2xl text-primary'>Dashboard</h2>
         <Link href={'/dashboard/create-new'}>
@@ -41,7 +43,6 @@ const page = () => {
 
       {/* list of video  */}
       <VideoList videoList={videoList}/>
-
     </div>
   )
 }

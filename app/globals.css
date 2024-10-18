@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,4 +77,147 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+section.main{
+  height: 100vh;
+  width: 100vw;
+}
+section .navbar{
+  height: 9vh;
+  /* border: 0.05rem solid white; */
+  width: 100vw;
+  z-index: 2;
+}
+.navbar .logo{
+  height: 7rem;
+  width: 9rem;
+}
+.navbar img{
+  height: 7rem;
+  width: 9rem;
+}
+.navbar ul{
+  font-size: 1.3rem;
+  height: 4rem;
+  width: 73rem;
+  /* border: 0.05rem solid white; */
+  gap: 3rem;
+}
+.navbar button{
+  font-size: 1.15rem;
+  border-radius: 0.6rem;
+  font-weight: 550;
+  height: 3rem;
+  width: 6rem;
+}
+section main.content{
+  height: 55vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+}
+.content .text{
+  height: 25vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+}
+.text p{
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.808);
+  z-index: 2;
+}
+.text h1{
+  font-size: 4.5rem;
+  font-weight: 500;
+  z-index: 2;
+}
+.text span{
+  color: rgba(255, 255, 255, 0.808);
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 2;
+}
+.content .prompt{
+  height: 15vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+}
+.prompt input{
+  border: 0.05rem solid rgba(0, 0, 0, 0.852);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.8rem;
+  height: 6vh;
+  width: 40vw;
+  z-index: 2;
+  text-align: center;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(198, 255, 239, 0.62);
+}
+.prompt button{
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black;
+  height: 6vh;
+  width: 9rem;
+  background: linear-gradient(to right, #037ADE,#03E5B7);
+  border-radius: 0.2rem;
+  z-index: 2;
+}
+.prompt input::placeholder{
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.content .tag{
+  height: 11vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+  z-index: 2;
+}
+.tag .tagbox{
+  height: 6vh;
+  width: 40vw;
+  /* border: 0.05rem solid white; */
+}
+.tag .tagbox div{
+  height: 6vh;
+  width: auto;
+  border: 0.08rem solid rgba(255, 255, 255, 0.301);
+  border-radius: 0.5rem;
+  z-index: 2;
+  padding: 0.75rem;
+}
+.tag .sample{
+  font-size: 1.02rem;
+  font-weight: 550;
+  height: 6vh;
+  width: 12rem;
+  background: linear-gradient(to right, #037ADE,#03E5B7);
+  border-radius: 0.2rem;
+  z-index: 2;
+}
+section .style{
+  height: 40vh;
+  width: 100vw;
+  /* border: 0.05rem solid white; */
+  z-index: 5;
+  /* background-color: black; */
+}
+.style img{
+  height: 35vh;
+  width: 19vw;
+  border-radius: 0.5rem;
+}
+.style .img3{
+  width: 16vw;
+}
+.style .img4{
+  width: 20vw;
 }

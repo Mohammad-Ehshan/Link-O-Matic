@@ -1,3 +1,5 @@
+// first
+
 // import { JSDOM } from "jsdom";
 
 // export async function GET(request) {
@@ -37,6 +39,7 @@
 //   }
 // }
 
+// second
 // import { JSDOM } from "jsdom";
 
 // export async function GET(request) {
@@ -95,7 +98,7 @@
 //   }
 // }
 
-
+// third
 // import { JSDOM } from "jsdom";
 
 // export async function GET(request) {
@@ -187,7 +190,7 @@
 //   }
 // }
 
-
+//fourth
 // import { JSDOM } from "jsdom";
 
 // export async function GET(request) {
@@ -295,16 +298,291 @@
 //   }
 // }
 
-
+//fifth with summarization
 //hugging face
+// import { JSDOM } from "jsdom";
+// import axios from "axios"; // Import Axios for making API requests
+
+// export async function GET(request) {
+//   const { searchParams } = new URL(request.url);
+//   const url = searchParams.get("url"); // Get the URL from query parameters
+
+//   // Check if the URL is provided
+//   if (!url) {
+//     return new Response(JSON.stringify({ error: "URL is required" }), {
+//       status: 400,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//   }
+
+//   try {
+//     // Validate the URL
+//     let validUrl;
+//     try {
+//       validUrl = new URL(url);
+//     } catch (err) {
+//       return new Response(JSON.stringify({ error: "Invalid URL format" }), {
+//         status: 400,
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//     }
+
+//     const res = await fetch(validUrl);
+
+//     // Check if the response is OK
+//     if (!res.ok) {
+//       throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
+//     }
+
+//     const html = await res.text();
+//     const dom = new JSDOM(html);
+
+//     // Remove all script, style, and comments elements
+//     const scriptElements = dom.window.document.querySelectorAll("script, style, noscript");
+//     scriptElements.forEach(script => script.remove());
+
+//     // Remove comments from HTML
+//     dom.window.document.body.innerHTML = dom.window.document.body.innerHTML.replace(/<!--[\s\S]*?-->/g, '');
+
+//     // Select the main content area
+//     let mainContentSet = new Set();
+
+//     // Common content selectors
+//     const contentSelectors = [
+//       "article",
+//       "main",
+//       ".content",
+//       "#content",
+//       "h1, h2, h3, h4, p",
+//       "section",
+//       ".post",
+//       ".entry",
+//     ];
+
+//     contentSelectors.forEach(selector => {
+//       const elements = dom.window.document.querySelectorAll(selector);
+//       elements.forEach(el => {
+//         const text = el.textContent.trim();
+//         if (text && text.length > 50) {
+//           mainContentSet.add(text);
+//         }
+//       });
+//     });
+
+//     let mainContent = Array.from(mainContentSet).join("\n\n")
+//       .replace(/\n\s*\n+/g, '\n\n')
+//       .replace(/[ \t]+/g, ' ')
+//       .trim();
+
+//     if (!mainContent) {
+//       return new Response(JSON.stringify({ error: "No meaningful content found." }), {
+//         status: 404,
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//     }
+
+//     // Step 4: Call the Hugging Face API with the extracted content
+//     const hfApiUrl = "https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6"; // Summarization model
+//     const hfApiKey = process.env.HUGGING_FACE_API_KEY; // Your Hugging Face API key
+
+//     const summaryResponse = await axios.post(
+//       hfApiUrl,
+//       {
+//         inputs: mainContent, // Send the extracted content
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${hfApiKey}`,
+//           "Content-Type": "application/json",
+//         },
+//       }
+//     );
+
+//     const summarizedText = summaryResponse.data[0].summary_text;
+
+//     return new Response(JSON.stringify({ summary: summarizedText }), {
+//       status: 200,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//   } catch (error) {
+//     console.error("Error fetching or summarizing the URL:", error.message);
+//     return new Response(JSON.stringify({ error: `Error: ${error.message}` }), {
+//       status: 500,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//   }
+// }
+
+
+//sixth with bigger summarization
+// import { JSDOM } from "jsdom";
+// import axios from "axios"; // Import Axios for making API requests
+
+// export async function GET(request) {
+//   const { searchParams } = new URL(request.url);
+//   const url = searchParams.get("url"); // Get the URL from query parameters
+
+//   // Check if the URL is provided
+//   if (!url) {
+//     return new Response(JSON.stringify({ error: "URL is required" }), {
+//       status: 400,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//   }
+
+//   try {
+//     // Validate the URL
+//     let validUrl;
+//     try {
+//       validUrl = new URL(url);
+//     } catch (err) {
+//       return new Response(JSON.stringify({ error: "Invalid URL format" }), {
+//         status: 400,
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//     }
+
+//     const res = await fetch(validUrl);
+
+//     // Check if the response is OK
+//     if (!res.ok) {
+//       throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
+//     }
+
+//     const html = await res.text();
+//     const dom = new JSDOM(html);
+
+//     // Remove all script, style, and comments elements
+//     const scriptElements = dom.window.document.querySelectorAll("script, style, noscript");
+//     scriptElements.forEach(script => script.remove());
+
+//     // Remove comments from HTML
+//     dom.window.document.body.innerHTML = dom.window.document.body.innerHTML.replace(/<!--[\s\S]*?-->/g, '');
+
+//     // Select the main content area
+//     let mainContentSet = new Set();
+
+//     // Common content selectors
+//     const contentSelectors = [
+//       "article",
+//       "main",
+//       ".content",
+//       "#content",
+//       "h1, h2, h3, h4, p",
+//       "section",
+//       ".post",
+//       ".entry",
+//     ];
+
+//     contentSelectors.forEach(selector => {
+//       const elements = dom.window.document.querySelectorAll(selector);
+//       elements.forEach(el => {
+//         const text = el.textContent.trim();
+//         if (text && text.length > 50) {
+//           mainContentSet.add(text);
+//         }
+//       });
+//     });
+
+//     let mainContent = Array.from(mainContentSet).join("\n\n")
+//       .replace(/\n\s*\n+/g, '\n\n')
+//       .replace(/[ \t]+/g, ' ')
+//       .trim();
+
+//     if (!mainContent) {
+//       return new Response(JSON.stringify({ error: "No meaningful content found." }), {
+//         status: 404,
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//     }
+
+//     // Function to chunk text into smaller parts if necessary
+//     function chunkText(text, chunkSize = 1024) {
+//       const chunks = [];
+//       let index = 0;
+//       while (index < text.length) {
+//         chunks.push(text.slice(index, index + chunkSize));
+//         index += chunkSize;
+//       }
+//       return chunks;
+//     }
+
+//     // Chunk the content if it's too large
+//     const contentChunks = chunkText(mainContent);
+
+//     // Call the Hugging Face API with the extracted content
+//     const hfApiUrl = "https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6"; // Updated summarization model
+//     const hfApiKey = process.env.HUGGING_FACE_API_KEY; // Your Hugging Face API key
+
+//     // Loop over each chunk and summarize it
+//     const summaries = await Promise.all(contentChunks.map(async (chunk) => {
+//       const response = await axios.post(
+//         hfApiUrl,
+//         {
+//           inputs: chunk, // Send the chunked content
+//           parameters: {
+//             max_length: 512,  // Increase the max length
+//             min_length: 150,  // Ensure a minimum summary length
+//           }
+//         },
+//         {
+//           headers: {
+//             // 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+//             Authorization: `Bearer ${hfApiKey}`,
+//             "Content-Type": "application/json",
+//           },
+//         }
+//       );
+//       return response.data[0]?.summary_text;
+//     }));
+
+//     // Combine all the summarized chunks
+//     const finalSummary = summaries.join(' ');
+
+//     return new Response(JSON.stringify({ summary: finalSummary }), {
+//       status: 200,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//   } catch (error) {
+//     console.error("Error fetching or summarizing the URL:", error.message);
+//     return new Response(JSON.stringify({ error: `Error: ${error.message}` }), {
+//       status: 500,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//   }
+// }
+
+// seventh summarization import { JSDOM } from "jsdom";
+import axios from "axios"; // Import Axios for API requests
 import { JSDOM } from "jsdom";
-import axios from "axios"; // Import Axios for making API requests
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const url = searchParams.get("url"); // Get the URL from query parameters
+  const url = searchParams.get("url"); // Extract the URL from query parameters
 
-  // Check if the URL is provided
+  // Check if URL is provided
   if (!url) {
     return new Response(JSON.stringify({ error: "URL is required" }), {
       status: 400,
@@ -315,7 +593,7 @@ export async function GET(request) {
   }
 
   try {
-    // Validate the URL
+    // Validate the URL format
     let validUrl;
     try {
       validUrl = new URL(url);
@@ -328,9 +606,8 @@ export async function GET(request) {
       });
     }
 
+    // Fetch content from the URL
     const res = await fetch(validUrl);
-
-    // Check if the response is OK
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
     }
@@ -338,27 +615,14 @@ export async function GET(request) {
     const html = await res.text();
     const dom = new JSDOM(html);
 
-    // Remove all script, style, and comments elements
+    // Remove unnecessary elements: script, style, comments
     const scriptElements = dom.window.document.querySelectorAll("script, style, noscript");
     scriptElements.forEach(script => script.remove());
-
-    // Remove comments from HTML
     dom.window.document.body.innerHTML = dom.window.document.body.innerHTML.replace(/<!--[\s\S]*?-->/g, '');
 
-    // Select the main content area
+    // Select the main content based on common selectors
     let mainContentSet = new Set();
-
-    // Common content selectors
-    const contentSelectors = [
-      "article",
-      "main",
-      ".content",
-      "#content",
-      "h1, h2, h3, h4, p",
-      "section",
-      ".post",
-      ".entry",
-    ];
+    const contentSelectors = ["article", "main", ".content", "#content", "h1, h2, h3, h4, p", "section", ".post", ".entry"];
 
     contentSelectors.forEach(selector => {
       const elements = dom.window.document.querySelectorAll(selector);
@@ -375,38 +639,69 @@ export async function GET(request) {
       .replace(/[ \t]+/g, ' ')
       .trim();
 
+    // If no content is found, return an error
     if (!mainContent) {
       return new Response(JSON.stringify({ error: "No meaningful content found." }), {
         status: 404,
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
       });
     }
 
-    // Step 4: Call the Hugging Face API with the extracted content
-    const hfApiUrl = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"; // Summarization model
-    const hfApiKey = process.env.NEXT_PUBLIC_HUGGING_FACE; // Your Hugging Face API key
-
-    const summaryResponse = await axios.post(
-      hfApiUrl,
-      {
-        inputs: mainContent, // Send the extracted content
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${hfApiKey}`,
-          "Content-Type": "application/json",
-        },
+    // Function to chunk the content
+    function chunkText(text, chunkSize = 1024, maxChunks = 10) {
+      const chunks = [];
+      let index = 0;
+      while (index < text.length && chunks.length < maxChunks) {
+        chunks.push(text.slice(index, index + chunkSize));
+        index += chunkSize;
       }
-    );
+      return chunks;
+    }
 
-    const summarizedText = summaryResponse.data[0].summary_text;
+    // Chunk content, limiting it to the first 5 chunks
+    const contentChunks = chunkText(mainContent, 1024, 5);
 
-    return new Response(JSON.stringify({ summary: summarizedText }), {
+    // Hugging Face summarization API details
+    const hfApiUrl = "https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6";
+    const hfApiKey = process.env.HUGGING_FACE_API_KEY;
+
+    // Summarize each content chunk using Hugging Face API
+    const summaries = await Promise.all(contentChunks.map(async (chunk) => {
+      try {
+        const response = await axios.post(
+          hfApiUrl,
+          { inputs: chunk, parameters: { max_length: 512, min_length: 150 } },
+          { headers: { Authorization: `Bearer ${hfApiKey}`, "Content-Type": "application/json" } }
+        );
+        return response.data[0]?.summary_text;
+      } catch (err) {
+        console.error("Error with Hugging Face API:", err.message);
+        return null;
+      }
+    }));
+
+    // Combine all valid summaries
+    const finalSummary = summaries.filter(Boolean).join(' ');
+
+    // Check if any summary was generated
+    if (!finalSummary) {
+      return new Response(JSON.stringify({ error: "Failed to generate a summary." }), {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    }
+
+    return new Response(JSON.stringify({ summary: finalSummary }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Allow CORS
       },
     });
 
@@ -416,6 +711,7 @@ export async function GET(request) {
       status: 500,
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Allow CORS
       },
     });
   }

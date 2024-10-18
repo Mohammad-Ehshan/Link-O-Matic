@@ -36,3 +36,4 @@
 
 23.npx shadcn@latest add dialog
 
+24. npm install sass
