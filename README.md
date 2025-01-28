@@ -24,7 +24,12 @@
 22. npm i --save-exact remotion@4.0.220 @remotion/cli@4.0.220
 23. npx shadcn@latest add dialog
 24. npm install sass
+25. npm install react-icons
+
+26.Website Hosted Link: https://link-o-matic-llpehxxal-mohammad-ehshans-projects.vercel.app
+27.npm install next@latest react@latest react-dom@latest eslint-config-next@latest
 
 # Project Description
 
 Converting URLs to videos.
+
