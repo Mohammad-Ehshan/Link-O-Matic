@@ -1,35 +1,68 @@
-# Project Setup
+# 🔗 URL to Video Generator
 
-1. npx create-next-app@latest [javascript-yes, eslint-no, tailwindcss-yes, import alias-no]
-2. npx shadcn@latest init
-3. npx shadcn@latest add button
-4. npm i drizzle-orm @neondatabase/serverless
-5. npm i -D drizzle-kit
-6. Neon (fitnessfreak2005@gmail.com, noori account)
-7. Clerk (ashmes16@gmail.com)
-8. npm install @clerk/nextjs
-9. npm i lucide-react
-10. npm install @google/generative-ai (using fitnessfreak2005@gmail.com noori account)
-11. npm i puppeteer (for web scraping)
-12. npm i jsdom (getting data in DOM)
-13. Hugging Face account using ashmes16@gmail.com (using model: https://api-inference.huggingface.co/models/facebook/mms-tts-eng)
-14. npm i axios
-15. npx shadcn@latest add alert-dialog
-16. npm i uuid (for generating unique id)
-17. Firebase account using ashmes16@gmail.com
-18. npm install firebase
-19. AssemblyAI using ashmes16@gmail.com
-20. npm install assemblyai (for captions)
-21. Using Remotion for video processing
-22. npm i --save-exact remotion@4.0.220 @remotion/cli@4.0.220
-23. npx shadcn@latest add dialog
-24. npm install sass
-25. npm install react-icons
+Transform any webpage into an engaging, AI-generated video with just a few inputs.
 
-26.Website Hosted Link: https://link-o-matic-llpehxxal-mohammad-ehshans-projects.vercel.app
-27.npm install next@latest react@latest react-dom@latest eslint-config-next@latest
+[![Next.js](https://img.shields.io/badge/Built%20With-Next.js-000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Hackathon Finalist](https://img.shields.io/badge/Hackathon-Finalist-blueviolet?style=for-the-badge)]()
+[![Made With](https://img.shields.io/badge/Powered%20By-HuggingFace-yellow?style=for-the-badge&logo=huggingface)](https://huggingface.co/)
+[![Remotion](https://img.shields.io/badge/Video%20Rendering-Remotion-ff69b4?style=for-the-badge)](https://www.remotion.dev/)
 
-# Project Description
+---
 
-Converting URLs to videos.
+## 🎥 What It Does
 
+This platform converts any **URL** into a **fully automated video** using modern AI and web technologies.
+
+### 🧠 How it works:
+1. **Input**:
+   - URL (any website/blog/article)
+   - Video Duration
+   - Content Type (e.g., YouTuber, Student, Teacher, etc.)
+   - Video Style (Realistic, Cartoon, WPAP, Animated, Watercolor)
+
+2. **Processing**:
+   - 📄 Web scraping: Extracts meaningful data from the URL
+   - 🧾 Script generation: Uses **Hugging Face models** to summarize and generate a script
+   - 🗣️ Audio generation: Converts script to realistic voice
+   - 🎬 Frame generation: Visual scenes are generated from text
+   - 📝 Caption generation: Uses audio-to-text models
+   - 🧩 Final video: All assets are stitched using **Remotion**
+
+3. **Output**:
+   - A polished, AI-generated video based on the original URL content 🎉
+
+---
+
+## 🚀 Tech Stack
+
+- **Frontend**: Next.js + Tailwind CSS
+- **Video Rendering**: [Remotion](https://www.remotion.dev/)
+- **AI/ML**: Hugging Face Transformers
+- **Web Scraping**: Cheerio / Puppeteer (or your scraping method)
+- **State Management**: Zustand
+- **Deployment**: Vercel
+
+---
+
+## 🏆 Achievements
+
+✨ Finalist in 3 National Hackathons:
+- Microsoft Office, Gurugram 🇮🇳
+- [Insert other hackathon names here]
+- [Insert another one if applicable]
+
+---
+
+## 📸 Screenshots
+
+> _Add some GIFs or screenshots of the input UI and output video preview._
+
+---
+
+## 📦 Run Locally
+
+```bash
+git clone https://github.com/yourusername/url-to-video.git
+cd url-to-video
+npm install
+npm run dev
