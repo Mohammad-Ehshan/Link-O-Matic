@@ -575,7 +575,7 @@
 // }
 
 // seventh summarization import { JSDOM } from "jsdom";
-import axios from "axios"; // Import Axios for API requests
+import axios from "axios"; 
 import { JSDOM } from "jsdom";
 
 export async function GET(request) {

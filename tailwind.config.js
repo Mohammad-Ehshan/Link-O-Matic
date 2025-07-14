@@ -9,6 +9,15 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+				   keyframes: {
+        twinkle: {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        twinkle: 'twinkle 5s ease-in-out infinite',
+      },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
