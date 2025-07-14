@@ -56,7 +56,7 @@ This platform converts any **URL** into a **fully automated video** using modern
 ## 📸 Screenshots
 
 ![Home Page Screenshot](./public/home.png)
-![Home Page Screenshot](./public/create video.png)
+![Home Page Screenshot](./public/createVideo.png)
 
 ---
 
