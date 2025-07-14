@@ -275,7 +275,8 @@ export default function HomePage() {
             transition={{ delay: 0.4 }}
             className="relative aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
+                 <iframe width="960" height="515" src="https://www.youtube.com/embed/1CUhYGHJwEk?si=7GFLRZxmuyQ6OYAl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {/* <div className="absolute inset-0 flex items-center justify-center">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -283,7 +284,7 @@ export default function HomePage() {
               >
                 <Play className="w-8 h-8 text-white ml-1" />
               </motion.button>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div

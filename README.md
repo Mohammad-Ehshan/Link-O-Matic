@@ -9,6 +9,15 @@ Transform any webpage into an engaging, AI-generated video with just a few input
 
 ---
 
+## 🏆 Achievements
+
+✨ Finalist in 3 National Hackathons:
+- Microsoft Office, Gurugram 🇮🇳
+- Adgips
+- JIMS
+
+---
+
 ## 🎥 What It Does
 
 This platform converts any **URL** into a **fully automated video** using modern AI and web technologies.
@@ -44,25 +53,17 @@ This platform converts any **URL** into a **fully automated video** using modern
 
 ---
 
-## 🏆 Achievements
-
-✨ Finalist in 3 National Hackathons:
-- Microsoft Office, Gurugram 🇮🇳
-- [Insert other hackathon names here]
-- [Insert another one if applicable]
-
----
-
 ## 📸 Screenshots
 
-> _Add some GIFs or screenshots of the input UI and output video preview._
+![Home Page Screenshot](./public/home.png)
+![Home Page Screenshot](./public/create video.png)
 
 ---
 
 ## 📦 Run Locally
 
 ```bash
-git clone https://github.com/yourusername/url-to-video.git
+git clone https://github.com/Mohammad-Ehshan/Link-O-Matic
 cd url-to-video
 npm install
 npm run dev
